@@ -1,4 +1,5 @@
 import csv
+import os
 
 import pandas as pd
 import numpy as np
@@ -48,11 +49,5 @@ lr.fit(train_feat, train_targ) # Fit the model
 print("After our binary classification using linear regression, the score (mean accuracy) was " + str(lr.score(train_feat, train_targ)))
 print("This means that using self.predict(X) will result in accuracy of " + str(lr.score(train_feat, train_targ)*100) + "%")
 
-#with open('mushrooms.csv','r') as csv_file: # Open up the CSV file, and save it to csv_file
- #       csv_reader = csv.reader(csv_file) # Read the CSV file we just got
-
-  #      next(csv_reader) # Skip the first 
-
-   #     for line in csv_reader:
-    #        print(line[0])
+os.remove('copy_of_mushrooms.csv') # Remove the no longer needed file
 
